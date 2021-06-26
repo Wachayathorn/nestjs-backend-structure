@@ -1,0 +1,1 @@
+export { PostHelloResponseDto } from './post-hello.response.dto';

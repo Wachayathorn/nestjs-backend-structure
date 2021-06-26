@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    container_name: backend
+    build: .
+    restart: always
+    image: backend
+    ports:
+      - 3030:3000
+    environment:
+      - HPPT_PORT=3000

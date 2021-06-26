@@ -1,0 +1,1 @@
+export { PostHelloRequestDto } from './post-hello.request.dto';
