@@ -11,13 +11,11 @@ export class ExampleWebsocketService implements OnGatewayConnection, OnGatewayDi
     private readonly server: Server;
 
     public handleConnection(client: Socket) {
-        this.logger.verbose('On Connection by IP:', client.handshake.address);
-        this.logger.debug(`On Connected by socket ID: ${client.id}`);
+        this.logger.verbose(`On Connected by socket ID: ${client.id}`);
     }
 
     handleDisconnect(client: Socket) {
-        this.logger.verbose('On Connection by IP:', client.handshake.address);
-        this.logger.debug(`On Disconnected by socket ID: ${client.id}`);
+        this.logger.verbose(`On Disconnected by socket ID: ${client.id}`);
     }
 
     public async sendToClient() {

@@ -1,14 +1,17 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { WsAdapter } from '@nestjs/platform-ws';
 import { AppModule } from './app.module';
 import * as fs from 'fs';
+
 
 async function bootstrap() {
   const looger = new Logger('Main');
   const app = await NestFactory.create(AppModule, {
     cors: true
   });
+  app.useWebSocketAdapter(new WsAdapter(app));
 
   const options = new DocumentBuilder()
     .setTitle('API Documents')
